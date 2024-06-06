@@ -9,10 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Do the Thing")
+        NavigationStack {
+            Form {
+                Section (header: Text("Main goal")) {
+                    Text("Hello World!")
+                }
+            }
+            .navigationTitle("Do the Thing")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
     }
 }
 

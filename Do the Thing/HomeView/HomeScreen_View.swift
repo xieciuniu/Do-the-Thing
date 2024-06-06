@@ -9,7 +9,31 @@ import SwiftUI
 
 struct HomeScreen_View: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Text("Motivational Quole")
+            
+            List {
+                Section (header: Text("Main goal!")) {
+                    Text("Hello here!")
+                }
+                
+                Section(header: Text("Goals")) {
+                    Text("Another Goal1")
+                    Text("Another Goal1")
+                    Text("Another Goal1")
+                    Text("Another Goal1")
+                    
+                }
+                
+                Section(header: Text("Next tasks")) {
+                    Text("Next Task")
+                    Text("Next Task")
+                    Text("Next Task")
+                    Text("Next Task")
+                    Text("Next Task")
+                }
+            }
+        }
     }
 }
 
