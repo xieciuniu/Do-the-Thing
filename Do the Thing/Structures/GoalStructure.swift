@@ -15,10 +15,10 @@ struct Task: Identifiable {
 //    TODO: start, end date; priority; pojedynczy taks; powtarzalny task;
 }
 
-class Goal: Identifiable {
+class Goal: ObservableObject, Identifiable {
     var id = UUID()
     var name: String = ""
-    var tasks: [Task] = []
+    @Published var tasks: [Task] = []
     var isMain: Bool = false
     
     // TODO: możliwie zmienić wyświetlenie podzadań
@@ -32,6 +32,7 @@ class Goal: Identifiable {
 @MainActor class Goals: ObservableObject {
     @Published var goals: [Goal] = []
     
+       
     func showTasks(at offsets: UUID) {
         if let goal = goals.first(where: { $0.id == offsets }) {
             goal.showTasks.toggle()
